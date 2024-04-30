@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+.container {
+    margin: 5% auto;
+display: flex;
+justify-content: space-around;
+}
+.card-img-top {
+    height: 300px;
+object-fit: cover;
+}
+.btn {
+    width: 50%;
+align-self: center;
+margin-bottom: 5%;
+}
+.btn-danger {
+    display: none;
+}
