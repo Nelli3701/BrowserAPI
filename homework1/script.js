@@ -39,7 +39,7 @@ document.querySelectorAll('.btn-success').forEach((button, index) => button.addE
     const currentMembers = parentEl.querySelector('.current-members b');
     if (Number(currentMembers.textContent) < Number(maxMembers.textContent)) {
         currentMembers.textContent = Number(currentMembers.textContent) + 1;
-        JSON.parse(localStorage.getItem('savedClasses'))[index].currentMembers++;
+        //JSON.parse(localStorage.getItem('savedClasses'))[index].currentMembers++;
         //savedClasses[index].currentMembers++;
         button.textContent = 'Вы записаны';
         button.disabled = true;
