@@ -1,5 +1,7 @@
 'use strict';
 const parseData = JSON.parse(classes);
+const savedClasses = JSON.parse(localStorage.getItem('classes')) || classes;
+localStorage.setItem('classes', JSON.stringify(savedClasses));
 const containerEl = document.querySelector('.container');
 const template = item__template.content;
 parseData.forEach((el) => {
@@ -12,7 +14,7 @@ parseData.forEach((el) => {
     newTemplate.querySelector('.current-members b').textContent = el.currentMembers;
     containerEl.appendChild(newTemplate);
 });
-const savedClasses = JSON.parse(localStorage.getItem('classes')) || [];
+
 const saveData = () => {
     localStorage.setItem('classes', JSON.stringify(savedClasses));
 }
