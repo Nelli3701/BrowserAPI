@@ -1,7 +1,6 @@
 'use strict';
 const parseData = JSON.parse(classes);
-const savedClasses = JSON.parse(localStorage.getItem('classes')) || classes;
-localStorage.setItem('classes', JSON.stringify(savedClasses));
+localStorage.setItem('classes', JSON.stringify(classes));
 const containerEl = document.querySelector('.container');
 const template = item__template.content;
 parseData.forEach((el) => {
@@ -15,9 +14,13 @@ parseData.forEach((el) => {
     containerEl.appendChild(newTemplate);
 });
 
+const savedClasses = JSON.parse(localStorage.getItem('classes')) || classes;
+
 const saveData = () => {
     localStorage.setItem('classes', JSON.stringify(savedClasses));
 }
+
+//console.log(savedClasses);
 
 const btnSuccessEls = document.querySelectorAll('.btn-success');
 btnSuccessEls.forEach((button) => {
@@ -30,12 +33,14 @@ btnSuccessEls.forEach((button) => {
     }
 });
 
-document.querySelectorAll('.btn-success').forEach((button) => button.addEventListener('click', (e) => {
+document.querySelectorAll('.btn-success').forEach((button, index) => button.addEventListener('click', (e) => {
     const parentEl = button.parentElement;
     const maxMembers = parentEl.querySelector('.max-members b');
     const currentMembers = parentEl.querySelector('.current-members b');
     if (Number(currentMembers.textContent) < Number(maxMembers.textContent)) {
         currentMembers.textContent = Number(currentMembers.textContent) + 1;
+        JSON.parse(localStorage.getItem('savedClasses'))[index].currentMembers++;
+        //savedClasses[index].currentMembers++;
         button.textContent = 'Вы записаны';
         button.disabled = true;
         parentEl.querySelector('.btn-danger').style.display = 'block';

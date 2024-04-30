@@ -12,5 +12,12 @@ const classes = `[
         "time": "11:00",
         "maxMembers": 12,
         "currentMembers": 11
+    },
+    {
+        "title": "latina",
+        "img": "img/latina.webp",
+        "time": "17:00",
+        "maxMembers": 15,
+        "currentMembers": 10
     }
 ]`;
