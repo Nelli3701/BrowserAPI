@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    padding: 3%;
+}
+
+.carousel {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    height: 400px;
+    object-fit: cover;
+}
